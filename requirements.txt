@@ -1,0 +1,29 @@
+# DocuMind — Python dependencies (Phase 3: RAG Engine)
+# Install with: pip install -r requirements.txt
+
+# ── Web framework ──────────────────────────────────────────────────────────────
+fastapi==0.143.0
+uvicorn==0.54.0
+python-multipart==0.0.32   # multipart/form-data file uploads
+
+# ── Data validation ────────────────────────────────────────────────────────────
+pydantic==2.14.1
+
+# ── PDF text extraction ────────────────────────────────────────────────────────
+PyMuPDF==1.26.3             # fitz — page-aware PDF text extraction
+
+# ── Vector search ──────────────────────────────────────────────────────────────
+faiss-cpu==1.15.1           # FAISS similarity search (CPU build)
+numpy==2.5.4                # required by faiss
+
+# ── Google Gemini SDK (GA, recommended over deprecated google-generativeai) ────
+google-genai==1.20.0        # pip install google-genai
+
+# ── HTTP client (used internally by google-genai) ─────────────────────────────
+httpx==0.28.1
+
+# ── Environment loading ────────────────────────────────────────────────────────
+python-dotenv==1.1.1         # loads .env into os.environ at startup
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+pytest==9.1.1
