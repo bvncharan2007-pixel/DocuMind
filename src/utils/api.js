@@ -75,7 +75,7 @@ export class ApiError extends Error {
 
 export const auth = {
   me:       ()        => request('GET',  '/api/auth/me'),
-  login:    (body)    => request('POST', '/api/auth/login',    body),
+  login:    (body)    => request('POST', '/api/auth/login', body),
   register: (body)    => request('POST', '/api/auth/register', body),
   logout:   ()        => request('POST', '/api/auth/logout'),
 };
