@@ -12,7 +12,7 @@
 
 let _csrfToken = null;
 let _onUnauthorized = null;
-
+const API_BASE = import.meta.env.VITE_API_URL || '';
 export function setApiCsrfToken(token) {
   _csrfToken = token;
 }
@@ -34,7 +34,7 @@ async function request(method, path, body, opts = {}) {
     headers['X-CSRF-Token'] = _csrfToken;
   }
 
-  const res = await fetch(path, {
+const res = await fetch(`${API_BASE}${path}`, {
     method,
     credentials: 'include',  // always send session cookie
     headers,
